@@ -8,13 +8,10 @@ const navButtons = [
     link: "getDrug",
   },
   {
-    name: "Всі ліки",
+    name: "Ліки",
     link: "allDrugs",
   },
-  {
-    name: "Додати ліки",
-    link: "newDrug",
-  },
+
   {
     name: "Пацієнти",
     link: "patients",

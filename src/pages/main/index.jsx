@@ -5,7 +5,6 @@ import { testRequest } from "../../redux/actions/testActions";
 import { Header } from "../../components";
 import AllDrugs from "../allDrugs";
 import GetDrugs from "../getDrugs";
-import NewDrug from "../newDrug";
 import Patients from "../patients";
 
 import "./styles.scss";
@@ -20,7 +19,6 @@ const Main = () => {
       <Header />
       <GetDrugs />
       <AllDrugs />
-      <NewDrug />
       <Patients />
     </div>
   );
