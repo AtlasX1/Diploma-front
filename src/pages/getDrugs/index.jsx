@@ -26,8 +26,15 @@ const GetDrug = (props) => {
     setPatient((prevData) => ({ ...prevData, [propName]: newData }));
 
   return (
-    <Grid container className="section getDrug" id="getDrug">
-      <Grid container className="setPatient" lg={6} sm={12} justify="center">
+    <Grid container item className="section getDrug" id="getDrug">
+      <Grid
+        container
+        item
+        className="setPatient"
+        lg={6}
+        sm={12}
+        justify="center"
+      >
         <Grid container item className="patientForm" xs={8} justify="center">
           <Grid container item className="field" xs={12} justify="center">
             <TextField

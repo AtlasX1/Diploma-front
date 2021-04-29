@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { addDrugRequest } from "../../redux/actions/drugsActions";
 import TextField from "@material-ui/core/TextField";
-import ChipInput from "material-ui-chip-input";
 import Grid from "@material-ui/core/Grid";
-
+import Table from "./table";
 import "./styles.scss";
 
 const drugForm = [
@@ -12,6 +13,11 @@ const drugForm = [
 ];
 
 const AllDrugs = (props) => {
+  const dispatch = useDispatch();
+  const addDrug = useCallback((data) => dispatch(addDrugRequest(data)), []);
+
+  const drugsData = useSelector((state) => state.drugsReducer);
+
   const [data, setData] = useState({
     name: "",
     activeSubstance: "",
@@ -37,16 +43,17 @@ const AllDrugs = (props) => {
 
   return (
     <Grid
+      item
       container
       lg={12}
       className="section allDrugs"
       id="allDrugs"
       justify="center"
     >
-      <Grid container lg={6} xs={12} className="drugForm" justify="center">
-        <Grid container md={8} justify="center" className="content">
-          {drugForm.map(({ id, name }) => (
-            <Grid item container xs={12} justify="center">
+      <Grid container item lg={6} xs={12} className="drugForm" justify="center">
+        <Grid container item md={8} justify="center" className="content">
+          {drugForm.map(({ id, name }, i) => (
+            <Grid container item xs={12} justify="center" key={id + i}>
               <TextField
                 id="standard-basic"
                 label={name}
@@ -55,7 +62,7 @@ const AllDrugs = (props) => {
               />
             </Grid>
           ))}
-          <Grid item container xs={12} justify="center">
+          <Grid container item xs={12} justify="center">
             <TextField
               id="standard-basic"
               label="Опис"
@@ -65,15 +72,15 @@ const AllDrugs = (props) => {
               onChange={(e) => updateData(e.target.value, "description")}
             />
           </Grid>
-          <Grid item container xs={12} justify="center">
+          <Grid container item xs={12} justify="center">
             Особливості людини
           </Grid>
           <div className="addNewSpecific" onClick={() => addNewSpecificData()}>
             Додати особливість
           </div>
           {data.specificsOfPatients.map((data, idx) => (
-            <Grid item container xs={12} lg={12} key={idx}>
-              <Grid lg={4} xs={12}>
+            <Grid item container xs={12} lg={12} key={data.name + idx}>
+              <Grid container item lg={4} xs={12}>
                 <TextField
                   id="standard-basic"
                   label="Назва"
@@ -83,7 +90,7 @@ const AllDrugs = (props) => {
                   }
                 />
               </Grid>
-              <Grid lg={4} xs={12}>
+              <Grid container item lg={4} xs={12}>
                 <TextField
                   id="standard-basic"
                   label="Грами"
@@ -93,7 +100,7 @@ const AllDrugs = (props) => {
                   }
                 />
               </Grid>
-              <Grid lg={4}>
+              <Grid container item lg={4}>
                 <TextField
                   id="standard-basic"
                   label="Опис"
@@ -108,13 +115,21 @@ const AllDrugs = (props) => {
               <div style={{ height: "10px" }}></div>
             </Grid>
           ))}
-          <Grid className="addNewSpecific" lg={12}>
+          <Grid
+            container
+            item
+            className="addNewSpecific"
+            lg={12}
+            onClick={() => {
+              addDrug(data);
+            }}
+          >
             Додати
           </Grid>
         </Grid>
       </Grid>
-      <Grid container lg={6} xs={12}>
-        Table
+      <Grid container item lg={5} xs={12}>
+        <Table rowData={drugsData} />
       </Grid>
     </Grid>
   );
