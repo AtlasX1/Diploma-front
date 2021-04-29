@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8fefbb86480e19d52e09578b99e96461",
+    "revision": "d193123ad14691c1063c0191aa9b4bd2",
     "url": "/Diploma-front/index.html"
   },
   {
