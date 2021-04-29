@@ -36,6 +36,7 @@ const AllDrugs = (props) => {
   };
 
   const changeSpecificData = (idx, prop, newData) => {
+    console.log(idx, prop, newData);
     const tmp = [...data.specificsOfPatients];
     tmp[idx][prop] = newData;
     updateData(tmp, "specificsOfPatients");
@@ -79,17 +80,18 @@ const AllDrugs = (props) => {
             Додати особливість
           </div>
           {data.specificsOfPatients.map((data, idx) => (
-            <Grid item container xs={12} lg={12} key={data.name + idx}>
+            <Grid item container xs={12} lg={12} key={idx}>
               <Grid container item lg={4} xs={12}>
                 <TextField
                   id="standard-basic"
-                  label="Назва"
+                  label="Назва особливості"
                   value={data.name}
                   onChange={(e) =>
                     changeSpecificData(idx, "name", e.target.value)
                   }
                 />
               </Grid>
+
               <Grid container item lg={4} xs={12}>
                 <TextField
                   id="standard-basic"
@@ -100,6 +102,7 @@ const AllDrugs = (props) => {
                   }
                 />
               </Grid>
+
               <Grid container item lg={4}>
                 <TextField
                   id="standard-basic"

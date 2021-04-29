@@ -84,7 +84,7 @@ function Row(props) {
               <Table size="small" aria-label="purchases">
                 <TableHead>
                   <TableRow>
-                    <TableCell>Назва</TableCell>
+                    <TableCell>Назва особливості</TableCell>
                     <TableCell>Грами</TableCell>
                     <TableCell align="right">Опис</TableCell>
                   </TableRow>
@@ -117,18 +117,6 @@ function Row(props) {
     </React.Fragment>
   );
 }
-
-const rows = [
-  createData(
-    "Frozen yoghurt",
-    159,
-    6.0,
-    "vdescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescriptiondescription"
-  ),
-  createData("Frozen yoghurt", 159, 6.0, 24),
-  createData("Frozen yoghurt", 159, 6.0, 24),
-  createData("Frozen yoghurt", 159, 6.0, 24),
-];
 
 export default function CollapsibleTable({ rowData }) {
   const { drugs } = rowData;
