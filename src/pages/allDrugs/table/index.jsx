@@ -41,10 +41,9 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {row.name}
+          {row.activeSubstance}
         </TableCell>
-        <TableCell align="right">{row.activeSubstance}</TableCell>
-        <TableCell align="right">{row.grams}</TableCell>
+        <TableCell align="right">{row.contraindicationDrug}</TableCell>
         <TableCell
           align="right"
           style={{
@@ -67,7 +66,6 @@ function Row(props) {
                 <TableHead>
                   <TableRow>
                     <TableCell>Назва особливості</TableCell>
-                    <TableCell>Грами</TableCell>
                     <TableCell align="right">Опис</TableCell>
                   </TableRow>
                 </TableHead>
@@ -110,9 +108,8 @@ export default function CollapsibleTable({ rowData }) {
         <TableHead>
           <TableRow>
             <TableCell />
-            <TableCell>Назва</TableCell>
-            <TableCell align="right">Діюча речовина</TableCell>
-            <TableCell align="right">Грами (g)</TableCell>
+            <TableCell>Діюча речовина</TableCell>
+            <TableCell align="right">Не вживати з</TableCell>
             <TableCell align="right">Опис</TableCell>
           </TableRow>
         </TableHead>
