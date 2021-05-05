@@ -12,10 +12,10 @@ const navButtons = [
     link: "allDrugs",
   },
 
-  {
-    name: "Пацієнти",
-    link: "patients",
-  },
+  // {
+  //   name: "Пацієнти",
+  //   link: "patients",
+  // },
 ];
 
 const Header = () => {

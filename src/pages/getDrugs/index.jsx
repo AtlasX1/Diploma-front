@@ -11,15 +11,16 @@ const patientForm = [
   { id: "disease", name: "Хвороба" },
   { id: "subDisease", name: "Супутні захворювання" },
   { id: "specificsOfPatients", name: "Особливості пацієнта" },
+  { id: "contraindicationDrug", name: "Речовини які вже вжиються пацієнтом" },
 ];
 
 const GetDrug = (props) => {
   const [patient, setPatient] = useState({
-    number: 0,
     symptoms: [],
     disease: [],
     subDisease: [],
     specificsOfPatients: [],
+    contraindicationDrug: [],
   });
 
   const updatePatientData = (newData, propName) =>
@@ -36,15 +37,6 @@ const GetDrug = (props) => {
         justify="center"
       >
         <Grid container item className="patientForm" xs={8} justify="center">
-          <Grid container item className="field" xs={12} justify="center">
-            <TextField
-              id="standard-basic"
-              label="Номер пацієнта"
-              type="number"
-              value={patient.number}
-              onChange={(e) => updatePatientData(e.target.value, "number")}
-            />
-          </Grid>
           {patientForm.map(({ id, name }) => (
             <Grid
               container

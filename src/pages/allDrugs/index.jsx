@@ -3,13 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { addDrugRequest } from "../../redux/actions/drugsActions";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
+import ChipInput from "material-ui-chip-input";
 import Table from "./table";
 import "./styles.scss";
 
 const drugForm = [
   { id: "name", name: "Назва" },
   { id: "activeSubstance", name: "Діюча речовина" },
-  { id: "grams", name: "Грам" },
 ];
 
 const AllDrugs = (props) => {
@@ -21,9 +21,9 @@ const AllDrugs = (props) => {
   const [data, setData] = useState({
     name: "",
     activeSubstance: "",
-    grams: "",
     description: "",
     specificsOfPatients: [],
+    contraindicationDrug: [],
   });
 
   const updateData = (newData, propName) =>
@@ -63,6 +63,23 @@ const AllDrugs = (props) => {
               />
             </Grid>
           ))}
+          <Grid container item className="field" xs={12} justify="center">
+            <ChipInput
+              label={"Не вживати з такими речовинами"}
+              value={data["contraindicationDrug"]}
+              onAdd={(chip) => {
+                const tmp = [...data["contraindicationDrug"]];
+                tmp.push(chip);
+                updateData(tmp, "contraindicationDrug");
+              }}
+              onDelete={(chip) => {
+                const tmp = data["contraindicationDrug"].filter(
+                  (data) => data !== chip
+                );
+                updateData(tmp, "contraindicationDrug");
+              }}
+            />
+          </Grid>
           <Grid container item xs={12} justify="center">
             <TextField
               id="standard-basic"
@@ -92,17 +109,6 @@ const AllDrugs = (props) => {
                 />
               </Grid>
 
-              <Grid container item lg={4} xs={12}>
-                <TextField
-                  id="standard-basic"
-                  label="Грами"
-                  value={data.grams}
-                  onChange={(e) =>
-                    changeSpecificData(idx, "grams", e.target.value)
-                  }
-                />
-              </Grid>
-
               <Grid container item lg={4}>
                 <TextField
                   id="standard-basic"
@@ -118,14 +124,13 @@ const AllDrugs = (props) => {
               <div style={{ height: "10px" }}></div>
             </Grid>
           ))}
+
           <Grid
             container
             item
             className="addNewSpecific"
             lg={12}
-            onClick={() => {
-              addDrug(data);
-            }}
+            onClick={() => addDrug(data)}
           >
             Додати
           </Grid>

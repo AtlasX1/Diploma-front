@@ -1,6 +1,6 @@
-import React, { useCallback } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { testRequest } from "../../redux/actions/testActions";
+import { getAllDrugsRequest } from "../../redux/actions/drugsActions";
 
 import { Header } from "../../components";
 import AllDrugs from "../allDrugs";
@@ -12,14 +12,17 @@ import "./styles.scss";
 const Main = () => {
   const dispatch = useDispatch();
 
-  const func = useCallback((data) => dispatch(testRequest(data)), []);
+  const func = useCallback(() => dispatch(getAllDrugsRequest()), []);
+
+  useEffect(() => {
+    func();
+  }, []);
 
   return (
     <div>
       <Header />
       <GetDrugs />
       <AllDrugs />
-      <Patients />
     </div>
   );
 };

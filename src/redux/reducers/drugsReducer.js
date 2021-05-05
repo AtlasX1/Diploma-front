@@ -2,6 +2,9 @@ import {
   ADD_DRUG_REQUEST,
   ADD_DRUG_SUCCESS,
   ADD_DRUG_ERROR,
+  GET_ALL_DRUGS_REQUEST,
+  GET_ALL_DRUGS_SUCCESS,
+  GET_ALL_DRUGS_ERROR,
 } from "../actions/drugsActions";
 
 const initialState = {
@@ -34,6 +37,25 @@ const drugsReducer = (state = initialState, action) => {
         isLoading: false,
       };
 
+    case GET_ALL_DRUGS_REQUEST:
+      return {
+        ...state,
+        isLoading: true,
+      };
+
+    case GET_ALL_DRUGS_SUCCESS:
+      return {
+        ...state,
+        drugs: action.data,
+        isLoading: false,
+      };
+
+    case GET_ALL_DRUGS_ERROR:
+      return {
+        ...state,
+        error: action.error,
+        isLoading: false,
+      };
     default:
       return state;
   }

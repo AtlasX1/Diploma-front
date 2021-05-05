@@ -13,33 +13,15 @@ import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 import KeyboardArrowUpIcon from "@material-ui/icons/KeyboardArrowUp";
-import Grid from "@material-ui/core/Grid";
 
 const useRowStyles = makeStyles({
   root: {
-    "& > *": {
-      borderBottom: "unset",
-    },
+    width: "100%",
+  },
+  container: {
+    maxHeight: 440,
   },
 });
-
-function createData(name, activeSubstance, grams, description) {
-  return {
-    name,
-    activeSubstance,
-    grams,
-    description,
-    specificsOfPatients: [
-      {
-        name: "2020-01-05",
-        grams: "11091700",
-        description:
-          "description description descriptiondescription description description description",
-      },
-      { name: "2020-01-05", grams: "11091700", description: "" },
-    ],
-  };
-}
 
 function Row(props) {
   const { row } = props;
@@ -120,10 +102,11 @@ function Row(props) {
 
 export default function CollapsibleTable({ rowData }) {
   const { drugs } = rowData;
+  const classes = useRowStyles();
 
   return (
-    <TableContainer component={Paper}>
-      <Table aria-label="collapsible table">
+    <TableContainer component={Paper} className={classes.container}>
+      <Table stickyHeader aria-label="collapsible table">
         <TableHead>
           <TableRow>
             <TableCell />
@@ -133,7 +116,7 @@ export default function CollapsibleTable({ rowData }) {
             <TableCell align="right">Опис</TableCell>
           </TableRow>
         </TableHead>
-        <TableBody>
+        <TableBody style={{ maxHeight: "500px" }}>
           {drugs.map((row, i) => (
             <Row key={row.name + i} row={row} />
           ))}
