@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "84b4234412862c09ac6344c92ae9c837",
+    "revision": "26983e9502d6902851a449f2b5248dde",
     "url": "/Diploma-front/index.html"
   },
   {
-    "revision": "346cdf84ebd781097347",
+    "revision": "6b86254dc3dc51ee91d6",
     "url": "/Diploma-front/static/css/main.1157c64d.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Diploma-front/static/js/2.d7cea287.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "346cdf84ebd781097347",
-    "url": "/Diploma-front/static/js/main.73768ad2.chunk.js"
+    "revision": "6b86254dc3dc51ee91d6",
+    "url": "/Diploma-front/static/js/main.f44b5a1b.chunk.js"
   },
   {
     "revision": "9ad7ef23d5ed39159589",
