@@ -1,5 +1,11 @@
-import { combineReducers } from "redux";
-import testReducer from "./testReducer";
-import drugsReducer from "./drugsReducer";
-const rootReducer = combineReducers({ testReducer, drugsReducer });
-export default rootReducer;
+import { configureStore } from "@reduxjs/toolkit";
+import drugsReducer from "./drugsReducerToolkit";
+import drugsMiddleware from "../middleware/drugsMiddleware";
+const store = configureStore({
+  reducer: {
+    drugs: drugsReducer,
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(drugsMiddleware),
+});
+export default store;

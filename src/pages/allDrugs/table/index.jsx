@@ -75,7 +75,6 @@ function Row(props) {
                       <TableCell component="th" scope="row">
                         {specific.name}
                       </TableCell>
-                      <TableCell>{specific.grams}</TableCell>
                       <TableCell
                         align="right"
                         style={{
@@ -98,8 +97,8 @@ function Row(props) {
   );
 }
 
-export default function CollapsibleTable({ rowData }) {
-  const { drugs } = rowData;
+export default function CollapsibleTable(props) {
+  const { drugs } = props?.rowData;
   const classes = useRowStyles();
 
   return (
