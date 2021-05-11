@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/Diploma-front/static/css/main.578cfb10.chunk.css",
-    "main.js": "/Diploma-front/static/js/main.47c3ba24.chunk.js",
-    "main.js.map": "/Diploma-front/static/js/main.47c3ba24.chunk.js.map",
+    "main.js": "/Diploma-front/static/js/main.d9e083d3.chunk.js",
+    "main.js.map": "/Diploma-front/static/js/main.d9e083d3.chunk.js.map",
     "runtime-main.js": "/Diploma-front/static/js/runtime-main.41e84ecb.js",
     "runtime-main.js.map": "/Diploma-front/static/js/runtime-main.41e84ecb.js.map",
     "static/js/2.8091f38f.chunk.js": "/Diploma-front/static/js/2.8091f38f.chunk.js",
     "static/js/2.8091f38f.chunk.js.map": "/Diploma-front/static/js/2.8091f38f.chunk.js.map",
     "index.html": "/Diploma-front/index.html",
-    "precache-manifest.5c234c3791acfcaf44d564c0345a8919.js": "/Diploma-front/precache-manifest.5c234c3791acfcaf44d564c0345a8919.js",
+    "precache-manifest.0eaaa2ab8cd0256df4066939cd36ed58.js": "/Diploma-front/precache-manifest.0eaaa2ab8cd0256df4066939cd36ed58.js",
     "service-worker.js": "/Diploma-front/service-worker.js",
     "static/css/main.578cfb10.chunk.css.map": "/Diploma-front/static/css/main.578cfb10.chunk.css.map",
     "static/js/2.8091f38f.chunk.js.LICENSE.txt": "/Diploma-front/static/js/2.8091f38f.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.41e84ecb.js",
     "static/js/2.8091f38f.chunk.js",
     "static/css/main.578cfb10.chunk.css",
-    "static/js/main.47c3ba24.chunk.js"
+    "static/js/main.d9e083d3.chunk.js"
   ]
 }
