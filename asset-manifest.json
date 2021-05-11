@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/Diploma-front/static/css/main.1157c64d.chunk.css",
-    "main.js": "/Diploma-front/static/js/main.f44b5a1b.chunk.js",
-    "main.js.map": "/Diploma-front/static/js/main.f44b5a1b.chunk.js.map",
+    "main.js": "/Diploma-front/static/js/main.4ced2240.chunk.js",
+    "main.js.map": "/Diploma-front/static/js/main.4ced2240.chunk.js.map",
     "runtime-main.js": "/Diploma-front/static/js/runtime-main.41e84ecb.js",
     "runtime-main.js.map": "/Diploma-front/static/js/runtime-main.41e84ecb.js.map",
-    "static/js/2.d7cea287.chunk.js": "/Diploma-front/static/js/2.d7cea287.chunk.js",
-    "static/js/2.d7cea287.chunk.js.map": "/Diploma-front/static/js/2.d7cea287.chunk.js.map",
+    "static/js/2.48b5dd56.chunk.js": "/Diploma-front/static/js/2.48b5dd56.chunk.js",
+    "static/js/2.48b5dd56.chunk.js.map": "/Diploma-front/static/js/2.48b5dd56.chunk.js.map",
     "index.html": "/Diploma-front/index.html",
-    "precache-manifest.3999be129d9a70f2c5847f2616924289.js": "/Diploma-front/precache-manifest.3999be129d9a70f2c5847f2616924289.js",
+    "precache-manifest.9bb8baea89112ce57407705ac07c7ffd.js": "/Diploma-front/precache-manifest.9bb8baea89112ce57407705ac07c7ffd.js",
     "service-worker.js": "/Diploma-front/service-worker.js",
     "static/css/main.1157c64d.chunk.css.map": "/Diploma-front/static/css/main.1157c64d.chunk.css.map",
-    "static/js/2.d7cea287.chunk.js.LICENSE.txt": "/Diploma-front/static/js/2.d7cea287.chunk.js.LICENSE.txt"
+    "static/js/2.48b5dd56.chunk.js.LICENSE.txt": "/Diploma-front/static/js/2.48b5dd56.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.41e84ecb.js",
-    "static/js/2.d7cea287.chunk.js",
+    "static/js/2.48b5dd56.chunk.js",
     "static/css/main.1157c64d.chunk.css",
-    "static/js/main.f44b5a1b.chunk.js"
+    "static/js/main.4ced2240.chunk.js"
   ]
 }
