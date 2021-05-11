@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-// import { getAllDrugsRequest } from "../../redux/actions/drugsActions";
+import { useDispatch } from "react-redux";
 import { getDrugsAsync } from "../../redux/reducers/drugsReducerToolkit";
 
 import { Header } from "../../components";
@@ -11,12 +10,8 @@ import "./styles.scss";
 
 const Main = () => {
   const dispatch = useDispatch();
-
   const func = useCallback(() => dispatch(getDrugsAsync()), []);
-
-  useEffect(() => {
-    func();
-  }, []);
+  useEffect(() => func(), []);
 
   return (
     <div>

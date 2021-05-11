@@ -12,7 +12,6 @@ const drugForm = [{ id: "name", name: "Діюча речовина" }];
 const AllDrugs = (props) => {
   const dispatch = useDispatch();
   const addDrug = useCallback((data) => dispatch(addDrugAsync(data)), []);
-
   const drugsData = useSelector((state) => state.drugs);
 
   const [data, setData] = useState({

@@ -1,5 +1,4 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-
 import api from "../api";
 
 export const addDrugAsync = createAsyncThunk(
@@ -13,6 +12,7 @@ export const addDrugAsync = createAsyncThunk(
     }
   }
 );
+
 export const getDrugsAsync = createAsyncThunk(
   "drugs/getAllDrugs",
   async (payload, { rejectWithValue }) => {
@@ -24,6 +24,7 @@ export const getDrugsAsync = createAsyncThunk(
     }
   }
 );
+
 const initialState = {
   drugs: [],
   loading: "idle",
