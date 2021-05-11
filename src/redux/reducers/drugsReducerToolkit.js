@@ -1,36 +1,63 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+
+import api from "../api";
+
+export const addDrugAsync = createAsyncThunk(
+  "drugs/addDrug",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const response = await api.createDrug(payload);
+      return { data: payload, message: response.data };
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  }
+);
+export const getDrugsAsync = createAsyncThunk(
+  "drugs/getAllDrugs",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const response = await api.getDrugs();
+      return response.data;
+    } catch (err) {
+      return rejectWithValue(err);
+    }
+  }
+);
 const initialState = {
   drugs: [],
-  isLoading: false,
+  loading: "idle",
   error: "",
 };
 
 const drugsReducer = createSlice({
   name: "drugs",
   initialState,
-
-  reducers: {
-    addDrugRequest(state, action) {
-      state.drugs.push(action.payload);
-      state.isLoading = true;
+  extraReducers: {
+    [addDrugAsync.pending.type]: (state) => {
+      state.loading = "pending";
     },
-    addDrugSuccess(state, action) {
-      state.isLoading = false;
+    [addDrugAsync.fulfilled.type]: (state, action) => {
+      state.drugs.push(action.payload.data);
+      state.loading = "idle";
     },
-    addDrugError(state, action) {
-      state.error = action.payload;
+    [addDrugAsync.rejected.type]: (state, { payload }) => {
+      state.loading = "idle";
+      state.error = payload;
     },
-    getAllDrugsRequest(state, action) {
-      state.isLoading = true;
+    [getDrugsAsync.pending.type]: (state, action) => {
+      state.loading = "pending";
     },
-    getAllDrugsSuccess(state, action) {
+    [getDrugsAsync.fulfilled.type]: (state, action) => {
       console.log(action);
-      state.drugs = [...action.payload];
-      state.isLoading = false;
+      state.loading = "idle";
+      state.drugs = [...action.payload.drugs];
+    },
+    [getDrugsAsync.rejected.type]: (state, { payload }) => {
+      state.loading = "idle";
+      state.error = payload;
     },
   },
 });
-
-export const { addDrugRequest, getAllDrugsRequest } = drugsReducer.actions;
 
 export default drugsReducer.reducer;

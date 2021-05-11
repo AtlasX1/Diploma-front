@@ -6,7 +6,6 @@ const api = {
     return axios.get(BASE_API_URL + "/api/substance/");
   },
   createDrug: async (data) => {
-    console.log(data);
     return axios.post(
       BASE_API_URL + "/api/substance/create",
       { ...data },

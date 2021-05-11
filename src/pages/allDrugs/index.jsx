@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { addDrugRequest } from "../../redux/reducers/drugsReducerToolkit";
+import { addDrugAsync } from "../../redux/reducers/drugsReducerToolkit";
 import TextField from "@material-ui/core/TextField";
 import Grid from "@material-ui/core/Grid";
 import ChipInput from "material-ui-chip-input";
@@ -11,7 +11,7 @@ const drugForm = [{ id: "name", name: "Діюча речовина" }];
 
 const AllDrugs = (props) => {
   const dispatch = useDispatch();
-  const addDrug = useCallback((data) => dispatch(addDrugRequest(data)), []);
+  const addDrug = useCallback((data) => dispatch(addDrugAsync(data)), []);
 
   const drugsData = useSelector((state) => state.drugs);
 
