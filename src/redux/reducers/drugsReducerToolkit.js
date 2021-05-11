@@ -14,17 +14,23 @@ const drugsReducer = createSlice({
       state.drugs.push(action.payload);
       state.isLoading = true;
     },
-    addDrugSuccess(state) {
-      if (state.ok) {
-        state.isLoading = false;
-      }
+    addDrugSuccess(state, action) {
+      state.isLoading = false;
     },
     addDrugError(state, action) {
       state.error = action.payload;
     },
+    getAllDrugsRequest(state, action) {
+      state.isLoading = true;
+    },
+    getAllDrugsSuccess(state, action) {
+      console.log(action);
+      state.drugs = [...action.payload];
+      state.isLoading = false;
+    },
   },
 });
 
-export const { addDrugRequest } = drugsReducer.actions;
+export const { addDrugRequest, getAllDrugsRequest } = drugsReducer.actions;
 
 export default drugsReducer.reducer;

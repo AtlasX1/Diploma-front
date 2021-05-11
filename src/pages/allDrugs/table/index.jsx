@@ -41,7 +41,7 @@ function Row(props) {
           </IconButton>
         </TableCell>
         <TableCell component="th" scope="row">
-          {row.activeSubstance}
+          {row.name}
         </TableCell>
         <TableCell align="right">{row.contraindicationDrug}</TableCell>
         <TableCell
@@ -70,7 +70,7 @@ function Row(props) {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  {row.specificsOfPatients.map((specific, i) => (
+                  {row.specificsOfPatients?.map((specific, i) => (
                     <TableRow key={specific.name + i}>
                       <TableCell component="th" scope="row">
                         {specific.name}
