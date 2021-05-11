@@ -7,7 +7,7 @@ import ChipInput from "material-ui-chip-input";
 import Table from "./table";
 import "./styles.scss";
 
-const drugForm = [{ id: "activeSubstance", name: "Діюча речовина" }];
+const drugForm = [{ id: "name", name: "Діюча речовина" }];
 
 const AllDrugs = (props) => {
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const AllDrugs = (props) => {
   const drugsData = useSelector((state) => state.drugs);
 
   const [data, setData] = useState({
-    activeSubstance: "",
+    name: "",
     description: "",
     specificsOfPatients: [],
     contraindicationDrug: [],

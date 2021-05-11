@@ -71,9 +71,9 @@ function Row(props) {
                 </TableHead>
                 <TableBody>
                   {row.specificsOfPatients?.map((specific, i) => (
-                    <TableRow key={specific.name + i}>
+                    <TableRow key={specific.feature.name + i}>
                       <TableCell component="th" scope="row">
-                        {specific.name}
+                        {specific.feature.name}
                       </TableCell>
                       <TableCell
                         align="right"
